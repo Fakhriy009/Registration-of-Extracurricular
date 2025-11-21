@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registrasi Ekstrakurikuler Sekolah</title>
+  <style>
+    .skenwinLogo {
+        width:105%;
+        background:#0a4a90;
+        padding:25px 24px;
+        display:flex;
+        align-items:center;
+        gap:18px;
+        color:white;
+        box-sizing:border-box;
+        position:relative;
+        top:-35px;
+    }
+
+    :root{
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --accent: #0b63d7;
+      --muted:#6b7280;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      padding:0;
+      background-image:url('https://www.smknwinongan.sch.id/media_library/image_sliders/cc330539002188dd1c30285715844a2e.jpeg');
+      background-size: cover;
+      background-position:center;
+      background-repeat:no-repeat;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:center;
+
+      padding:32px;
+      color:#111827;
+      backdrop-filter: blur(4px);
+    }
+
+    .container{
+      width:100%;
+      max-width:900px;
+      background:rgba(255,255,255,0.75);
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:26px;
+      margin-top:20px;
+      backdrop-filter: blur(6px);
+    }
+
+    header h1{margin:0;font-size:20px}
+    header p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    form{display:flex;flex-direction:column;gap:12px}
+
+    label{font-size:13px;color:var(--muted)}
+
+    input, select, textarea{
+      width:100%;
+      padding:10px 12px;
+      border:1px solid #dce7fa;
+      border-radius:8px;
+      background:white;
+      font-size:14px;
+      outline:none;
+    }
+
+    input:focus, select:focus, textarea:focus{
+      border-color:var(--accent);
+      box-shadow:0 4px 14px rgba(11,99,215,0.15);
+    }
+
+    .row{display:flex;gap:12px}
+    .col{flex:1}
+
+    .btn{
+      padding:10px 14px;
+      border-radius:8px;
+      background:var(--accent);
+      color:white;
+      border:none;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .info{
+      background:#f0f6ff;
+      border:1px solid #d9e6ff;
+      padding:14px;
+      border-radius:10px;
+      font-size:13px;
+    }
+
+    .chip{
+      padding:8px 11px;
+      background:white;
+      border:1px solid #e6eef9;
+      border-radius:8px;
+      margin-bottom:5px;
+    }
+
+    .telschool {
+      position: fixed;
+  top: 20px;      /* tidak mepet atas */
+  right: 20px;    /* tidak mepet kanan */
+  padding: 12px 18px;
+  background: #0b63d7;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+    }
+    .telschool1 {
+          position: fixed;
+  top: 20px;      /* tidak mepet atas */
+  right: 180px;    /* tidak mepet kanan */
+  padding: 12px 18px;
+  background: #0b63d7;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+    }
+
+    .success, .error{
+      padding:10px;
+      border-radius:8px;
+      font-weight:600;
+      display:none;
+      margin-top:8px;
+      font-size:14px;
+    }
+    .success{
+      background:#e9ffee;
+      border:1px solid #bbf7d0;
+      color:#065f46;
+    }
+    .error{
+      background:#ffe6e6;
+      border:1px solid #ffbaba;
+      color:#7f1d1d;
+    }
+
+    @media(max-width:920px){
+      .container{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="skenwinLogo">
+    <img src="https://www.smknwinongan.sch.id/media_library/images/def50ab6a1745bd392f7ab5a715286d6.png"
+         style="width:64px;height:64px;background:white;border-radius:50%;padding:5px;">
+    <div>
+      <div style="font-size:22px;font-weight:700;">SMK NEGERI WINONGAN</div>
+      <div style="font-size:13px">S.P.E.C.T.A</div>
+    </div>
+  </header>
+    <div class="telschool1" style="display:flex; align-items:center; gap:6px;">
+    <span style="font-size:16px;">✉️</span>
+    <span>admin@smknwinongan.sch.id</span>
+  </div>
+
+  <!-- Telp -->
+  <div class="telschool" style="display:flex; align-items:center; gap:6px;">
+    <span style="font-size:16px;">📞</span>
+    <span>(0343)443542</span>
+  </div>
+
+</div>
+  
+
+  <main class="container">
+    <section>
+      <header>
+        <h1>Form Registrasi Ekstrakurikuler</h1>
+        <p>Isi data dengan benar.</p>
+      </header>
+
+      <form id="myForm">
+
+
+        <div class="row">
+          <div class="col">
+            <label>Nama Lengkap</label>
+            <input id="name" name="name" required />
+          </div>
+          <div class="col">
+            <label>Kelas</label>
+            <input id="kelas" name="kelas" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>Nomor HP</label>
+            <input id="phone" name="phone" required />
+          </div>
+          <div class="col">
+            <label>Email</label>
+            <input id="email" name="email" type="email" />
+          </div>
+        </div>
+
+        <label>Pilih Ekstrakurikuler</label>
+        <select id="eskul" name="eskul" required>
+          <option value="">-- Pilih --</option>
+          <option>Taekwondo</option>
+          <option>PMR</option>
+          <option>Banjari</option>
+          <option>Tilawah</option>
+          <option>Bahasa Jepang</option>
+          <option>English</option>
+          <option>Tari</option>
+          <option>Paskibraka</option>
+          <option>Futsal</option>
+          <option>Pramuka</option>
+          <option>Vifo (Video Foto Grafer)</option>
+        </select>
+
+        <label>Catatan</label>
+        <textarea id="note" name="note" rows="3"></textarea>
+
+        <button class="btn" id="submitBtn">Daftar Sekarang</button>
+        <div id="loading" style="display:none;">Mengirim...</div>
+
+        <div id="success" class="success">Berhasil mendaftar!</div>
+        <div id="error" class="error"></div>
+
+      </form>
+    </section>
+
+    <aside>
+      <div class="info">
+        <strong>Info:</strong><br>
+        Terdapat 11 ekstrakurikuler.
+      </div>
+
+      <h4 style="margin-top:16px">Daftar Ekstrakurikuler</h4>
+      <div class="chip">Taekwondo</div>
+      <div class="chip">PMR</div>
+      <div class="chip">Banjari</div>
+      <div class="chip">Tilawah</div>
+      <div class="chip">Bahasa Jepang</div>
+      <div class="chip">English</div>
+      <div class="chip">Tari</div>
+      <div class="chip">Paskibraka</div>
+      <div class="chip">Futsal</div>
+      <div class="chip">Pramuka</div>
+      <div class="chip">Vifo (Video Foto Grafer)</div>
+
+    </aside>
+  </main>
+<p id="status" style="margin-top:10px; font-weight:bold;"></p>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const status = document.getElementById("status");
+    status.style.color = "black";
+    status.textContent = "Mengirim...";
+
+    const data = new FormData();
+    data.append("name", document.getElementById("name").value);
+    data.append("kelas", document.getElementById("kelas").value);
+    data.append("phone", document.getElementById("phone").value);
+    data.append("email", document.getElementById("email").value);
+    data.append("eskul", document.getElementById("eskul").value);
+    data.append("note", document.getElementById("note").value);
+
+    fetch("https://script.google.com/macros/s/AKfycbwBEHwRIsTZCT4ghh3sFCiIeuwLLDHMreamF9aO9b5CQvendFFtx5ZFWjZJoA6FQ_sB/exec", {
+        method: "POST",
+        body: data
+    })
+  .then(response => {
+    alert("✅ Data sudah diterima, Terima kasih sudah mendaftar! 🎉 Mohon tunggu konfirmasi dari admin 📩.");
+    document.getElementById("myForm").reset();
+
+  })
+  
+});
+</script>
+
+
+</body>
+</html>
